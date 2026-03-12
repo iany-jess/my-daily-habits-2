@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <footer>
-      <p>My Daily Habits &copy; 2025</p>
+      <p>My Daily Habits &copy; 2026</p>
     </footer>
   )
 }
