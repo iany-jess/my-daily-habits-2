@@ -11,6 +11,8 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
@@ -75,4 +77,14 @@
   background-color: #111827;
   color: #f9fafb;
   cursor: pointer;
+}
+
+.buttonFlex {
+  display: flex;
+  justify-content: center;
+}
+
+.classeNome {
+  background-color: #111827;
+  color: #f9fafb;
 }
