@@ -7,17 +7,19 @@ function HabitCard({ nome, descricao = '', meta, ativo = true, diasFeitos = 0, o
 
   return (
     <div className="habit-card">
-      <h3>{nome}</h3>
+      <h3 className="classeNome">{nome}</h3>
       {descricao && <p>{descricao}</p>}
       <p>{mensagemMeta}</p>
       <span>{ativo ? '✅ Ativo' : '⏸️ Pausado'}</span>
       {metaAtingida && <p>⭐ Parabéns! Meta da semana atingida!</p>}
 
-      {onRemover && (
+      <div className="buttonFlex">
+        {onRemover && (
         <button type="button" onClick={onRemover}>
           Remover
         </button>
       )}
+      </div>
     </div>
   )
 }
