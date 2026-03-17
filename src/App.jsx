@@ -10,7 +10,7 @@ function App() {
     <>
       <Header />
       <main>
-        <BemVindo nomeUsuario="Kelvin" />
+        <BemVindo nomeUsuario="Kelvin e Iany" />
         <SecaoHabitos titulo="Meus Hábitos">
           <HabitList />
         </SecaoHabitos>
