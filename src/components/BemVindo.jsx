@@ -1,17 +1,19 @@
-const BemVindo = ({ nomeUsuario = 'Visitante', totalHabitos = 0 }) => {
-  const nomeFormatado = nomeUsuario.toUpperCase()
+import { useHabits } from '../contexts/HabitsContext'
 
-  const mensagem = totalHabitos > 0
-  ? `Você tem ${totalHabitos} hábitos para acompanhar.`
-  : 'Organize sua rotina e acompanhe seus hábitos do dia.'
+function BemVindo({ nomeUsuario }) {
+  // Acesso direto ao contexto — sem props, sem intermediários
+  const { habits } = useHabits()
+
+  // Estado derivado — calculado na hora, sempre atualizado
+  const totalHabitos  = habits.length
+  const habitosAtivos = habits.filter(h => h.ativo).length
 
   return (
-    <>
-      <section>
-        <h2>Olá, {nomeFormatado}!</h2>
-        <p>{mensagem}</p>
-      </section>
-    </>
+    <section>
+      <h2>Olá, {nomeUsuario.toUpperCase()}!</h2>
+      <p>Você tem <strong>{totalHabitos}</strong> hábito(s) cadastrado(s).</p>
+      <p><strong>{habitosAtivos}</strong> ativo(s) no momento.</p>
+    </section>
   )
 }
 
